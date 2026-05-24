@@ -1,5 +1,5 @@
-import java.util.*;
 import java.nio.charset.StandardCharsets;
+import java.util.*;
 
 public class Main {
     
@@ -12,7 +12,7 @@ public class Main {
             new java.io.FileOutputStream("output.txt", false)
         )
     );
-} catch (Exception e) {
+} catch (java.io.FileNotFoundException e) {
     System.out.println("Output redirection failed");
 }
 OutputLogger.init();
@@ -77,6 +77,9 @@ OutputLogger.init();
                 //System.out.println("Recovered From Error...");
             }
         }
+
+        TACGenerator.printTAC();
+        TACGenerator.saveToFile();
 
         Parser.printSymbolTable();
 
